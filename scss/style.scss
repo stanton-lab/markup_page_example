@@ -1,0 +1,254 @@
+/* Colors */
+
+$white: #ffffff;
+$purple: #736fb8;
+$sky: #5bbde6;
+$darkBlue: #28618a;
+$darkenBlue: #374650;
+$menuBorder: #e8e8e8;
+$mainInfoBorder: #8885c3;
+
+/* Mixin */
+
+@mixin borderRadius($r) {
+  -webkit-border-radius: $r;
+  -moz-border-radius: $r;
+  -ms-border-radius: $r;
+  -o-border-radius: $r;
+  border-radius: $r;
+}
+
+@mixin alignMiddle {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ---------------------------- */
+
+html, body {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+}
+
+body {
+  background-color: $purple;
+  position: relative;
+  min-height: 100%;
+  height: auto;
+  padding-bottom: 59px;
+}
+
+header, main {
+  width: 100%;
+}
+
+/* HEADER */
+
+header {
+  background-color: $white;
+}
+
+.head-wrap {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  div {
+
+    h5 {
+      text-align: center;
+      color: $darkenBlue;
+      font-weight: bold;
+    }
+  }
+}
+
+.btn-color-sky {
+  color: $sky;
+  border-color: $sky;
+}
+
+.header-left-item {
+
+  button {
+    font-weight: bold;
+  }
+}
+
+.header-right-item {
+  text-align: right;
+
+  .dropdown {
+    padding: 0 5px;
+
+    button {
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+.btn-info, .header-right-item .dropdown {
+  display: inline-block;
+}
+
+.settings .point {
+  @include alignMiddle;
+  @include borderRadius(50%);
+  width: 7px;
+  height: 7px;
+  background-color: $sky;
+  cursor: pointer;
+}
+
+.head-drop-menu {
+  width: 180px;
+  top: 33px;
+  left: auto;
+  right: 0px;
+
+  li {
+    color: $darkBlue;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    img, span {
+      @include alignMiddle;
+    }
+
+    span {
+      font-weight: bold;
+      padding-left: 10px;
+      font-size: 14px;
+    }
+  }
+
+  li:first-child {
+    border-bottom: 1px solid $menuBorder;
+  }
+}
+
+/* MAIN */
+
+.main-wrap {
+  height: auto;
+  min-height: 100%;
+}
+
+.block-info {
+  width: 574px;
+  margin: 56px auto 0;
+  padding: 11px 0 31px;
+  border: 2px dashed $mainInfoBorder;
+  text-align: center;
+
+  h2, p {
+    color: $white;
+  }
+}
+
+/* FOOTER */
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $darkenBlue;
+}
+
+.footer-block {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  img, .foot-text {
+    @include alignMiddle;
+  }
+}
+
+.foot-text {
+  margin: 0 0 0 15px;
+  color: $white;
+
+  a {
+    color: $sky;
+  }
+}
+
+/* Responsive */
+
+@media screen and (max-width: 992px) {
+
+  .footer-block {
+    padding: 15px;
+
+    img, .foot-text {
+      display: block;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+
+    .foot-text {
+      text-align: center;
+      width: 100%;
+      margin: 15px 0 0;
+    }
+  }
+
+  body {
+    padding: 0 0 119px 0;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  body {
+    padding: 0 0 159px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .head-wrap {
+    padding-top: 40px;
+  }
+
+  .block-info {
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 94%;
+  }
+
+  .header-text-centr {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .header-left-item,
+  .header-right-item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .header-left-item {
+    width: 40%;
+  }
+
+  .header-right-item {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  body {
+    padding: 0 0 189px 0;
+  }
+}
+
